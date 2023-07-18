@@ -1,0 +1,55 @@
+/* App.css */
+.app {
+  position: relative;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: neon 1s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+  }
+}
+
+.app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(-45deg, #ff00ff, #00ff00, #00ffff, #ff0000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-title {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  animation: neon 1s ease-in-out infinite alternate;
+}
